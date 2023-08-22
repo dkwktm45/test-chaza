@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get code from GitHub repository
-                git credentialsId: 'LeeJinCICD', url: 'https://github.com/dkwktm45/test-chaza.git'
+                git credentialsId: 'dkwktm45', url: 'https://github.com/dkwktm45/test-chaza.git'
             }
         }
         stage('Build') {
