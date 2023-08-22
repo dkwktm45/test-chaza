@@ -2,7 +2,12 @@ pipeline {
     agent any
 
     stages {
-
+        stage('Checkout') {
+            steps {
+                // Get code from GitHub repository
+                git credentialsId: 'dkwktm45', url: 'https://github.com/dkwktm45/test-chaza.git'
+            }
+        }
         stage('Build') {
             steps {
                 // Build and package the Spring project using Gradle
