@@ -1,17 +1,7 @@
 pipeline {
     agent any
-    tools {
-        // 설정한 Git 도구의 이름 사용
 
-        git "dkwktm45"
-    }
     stages {
-        stage('Checkout') {
-            steps {
-                // Get code from GitHub repository
-                git credentialsId: 'dkwktm45', url: 'https://github.com/dkwktm45/test-chaza.git'
-            }
-        }
         stage('Build') {
             steps {
                 // Build and package the Spring project using Gradle
