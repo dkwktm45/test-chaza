@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         // 설정한 Git 도구의 이름 사용
+
         git "dkwktm45"
     }
     stages {
