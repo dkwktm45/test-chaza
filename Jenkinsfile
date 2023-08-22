@@ -2,13 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Clone') {
             steps {
-                echo 'Building the application...'
+                git branch: 'main', credentialsId: "LeeJin-token" ,url: 'https://github.com/dkwktm45/test-chaza'
+
                 script {
                     // Use the Gradle Wrapper if your project uses Gradle
-                    sh './gradlew build -x test'
 
+                    sh './gradlew build -x test'
                 }
             }
         }
@@ -19,7 +20,6 @@ pipeline {
                 script {
                     // Use the Gradle Wrapper if your project uses Gradle
                     sh './gradlew test'
-
                 }
             }
         }
